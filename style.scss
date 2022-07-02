@@ -1,3 +1,153 @@
 @use './src/mixin';
 @use './src/reset';
 @use './src/vars';
+img {
+  display:block;
+}
+:root {
+  --main-font-color:#333333;
+  --main-font-family:'Montserrat';
+}
+.header {
+  position:absolute;
+  z-index:1;
+  height:64px;
+  width:100vw;
+
+  &__hambarger {
+    display:block;
+    height:44px;
+    width:44px;
+    &-bars {
+      position:relative;
+      display:inline-block;
+      width:34px;
+      height:16px;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%);
+    }
+  }
+  &__bar {
+    position:absolute;
+    display:inline-block;
+    width:32px;
+    height:2px;
+    background:vars.$HEADER_TEXT_COLOR;
+    left:50%;
+    transform:translateX(-50%);
+  }
+  .bar {
+    &-mid {
+      top:8px;
+    }
+    &-bottom {
+      top:16px;
+    }
+  }
+  &__logo {
+    width:128px;
+  }
+  &__inner {
+    padding:0 20px;
+    height:100%;
+  }
+  &__content {
+    height:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+}
+.pg {
+  &-mainvisual {
+    color:vars.$HEADER_TEXT_COLOR;
+    position:relative;
+    top:0;
+    left:0;
+    &__heading {
+      font-family:var(--main-font-family);
+      font-size:4rem;
+      line-height:1.2;
+      letter-spacing:0.050em;
+    }
+    &__sub-heading {
+      font-size:1.6rem;
+      font-family:'Hiragino Kaku Gosick';
+      margin:20px 0 0 0;
+      line-height:1.5;
+      letter-spacing:0.08em;
+
+    }
+    &__body {
+      position:absolute;
+      top:284px;
+      padding:0 20px;
+    }
+    &__button {
+      margin:30px 0 0 0;
+      width:220px;
+      a {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        color:#ffffff;
+        font-size:1.5rem;
+        font-family:var(--main-font-family);
+        font-weight:bold;
+        border:solid 1px #ffffff;
+        width:100%;
+        height:55px;
+        border-radius:50px;
+      }
+    }
+  }
+  &-wrapper {
+    font-family: var(--main-font-family);
+  }
+  &-news {
+    margin:40px 0 80px;
+    &__inner {
+      padding:0 20px;
+    }
+    &__posts {
+      font-size:1.5rem;
+      color:var(--main-font-color);
+    }
+    &__post {
+      margin:40px 0 0 0;
+    }
+    &__date {
+      &-text {
+        letter-spacing:0.08em;
+      }
+    }
+    &__lead {
+      &-text {
+        font-size:1.4rem;
+        line-height:2;
+        letter-spacing:0.03em;
+      }
+    }
+  }
+ 
+}
+.content {
+  &-heading {
+    text-align:center;
+    &__title {
+      color:vars.$TITLE_COLOR;
+      margin:0 0 32px 0;
+      strong {
+        display:block;
+        font-size:3rem;
+        margin:0 0 4px 0;
+      }
+      small {
+        font-size:1.3rem;
+        font-weight:bold;
+      }
+    }
+  }
+
+}
