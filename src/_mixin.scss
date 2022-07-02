@@ -3,3 +3,9 @@
     @content;
   }
 }
+
+@mixin textstyle {
+  font-size:1.4rem;
+  line-height:2;
+  letter-spacing:0.03em;
+}

@@ -7,6 +7,7 @@ img {
 :root {
   --main-font-color:#333333;
   --main-font-family:'Montserrat';
+  --content-font-family:var(--content-font-family);
 }
 .header {
   position:absolute;
@@ -73,7 +74,7 @@ img {
     }
     &__sub-heading {
       font-size:1.6rem;
-      font-family:'Hiragino Kaku Gosick';
+      font-family:var(--content-font-family);
       margin:20px 0 0 0;
       line-height:1.5;
       letter-spacing:0.08em;
@@ -124,13 +125,85 @@ img {
     }
     &__lead {
       &-text {
-        font-size:1.4rem;
-        line-height:2;
-        letter-spacing:0.03em;
+       @include mixin.textstyle;
       }
     }
   }
- 
+ &-service {
+  margin :80px 0 40px;
+  &__inner {
+    padding:0 20px;
+  }
+  &__img {
+    max-width:500px;
+    margin:0 auto;
+    img {
+      width:100%;
+    }
+  }
+  &__list {
+    margin:40px 0 0 0;
+    &-title {
+      font-size:1.8rem;
+      text-align:center;
+    }
+   }
+   &__detail {
+    margin:12px 0 0 0;
+   }
+   &__text {
+    @include mixin.textstyle;
+    color:var(--main-font-color);
+   }
+   &__desc {
+    margin:16px 0 0 0;
+   }
+   &__button {
+    margin:40px 0 0 0;
+   }
+ }
+ &-content {
+  &--color {
+    background-color:vars.$CONTENT_BASE_COLOR;
+  }
+ }
+ &-works {
+  &__inner {
+    padding:0 20px;
+  }
+  &__body {
+    padding:44px 0;
+  }
+  &__text {
+    @include mixin.textstyle;
+    color:var(--main-font-color);
+  }
+ }
+ &-company {
+  background:url(img/design--company-sp.png);
+  background-size: contain;
+  padding:88px 0 116px;
+  &__inner {
+    padding:0 20px;
+  }
+  &__concept {
+    &-text {
+      text-align: center;
+      font-size:3.2rem;
+      font-weight:600;
+      font-family:var(--content-font-family);
+      line-height:1.3;
+    }
+  }
+  &__detail {
+    margin:44px 0 32px;
+  }
+  &__text {
+    text-align: center;
+    @include mixin.textstyle;
+    color:var(--main-font-color);
+  }
+ }
 }
 .content {
   &-heading {
@@ -149,5 +222,10 @@ img {
       }
     }
   }
-
+  &-button {
+    margin: 32px 0 0 0;
+    img {
+      margin:0 auto;
+    }
+  }
 }
