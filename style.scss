@@ -7,18 +7,24 @@ img {
 :root {
   --main-font-color:#333333;
   --main-font-family:'Montserrat';
-  --content-font-family:var(--content-font-family);
+  --content-font-family:'Hiragino Kaku Gsich';
 }
 .header {
-  position:absolute;
+  position:fixed;
   z-index:1;
   height:64px;
   width:100vw;
+  @include mixin.media {
+    height:84px;
+  }
 
   &__hambarger {
     display:block;
     height:44px;
     width:44px;
+    @include mixin.media {
+      display:none;
+    }
     &-bars {
       position:relative;
       display:inline-block;
@@ -27,6 +33,7 @@ img {
       top:50%;
       left:50%;
       transform:translate(-50%,-50%);
+      z-index:10;
     }
   }
   &__bar {
@@ -37,6 +44,7 @@ img {
     background:vars.$HEADER_TEXT_COLOR;
     left:50%;
     transform:translateX(-50%);
+    transition:all 0.5s ease;
   }
   .bar {
     &-mid {
@@ -48,6 +56,9 @@ img {
   }
   &__logo {
     width:128px;
+    @include mixin.media {
+      width:160px;
+    }
   }
   &__inner {
     padding:0 20px;
@@ -58,6 +69,54 @@ img {
     display:flex;
     justify-content:space-between;
     align-items:center;
+  }
+  &__nav {
+    &-body {
+      background:url(img/design--nav-open.png);
+      background-size: contain;
+      position:fixed;
+      top:0;
+      right:-100%;
+      width:100vw;
+      height:100vh;
+      transition:all 0.5s ease;
+      &.open {
+        right:0;
+      }
+      @include mixin.media {
+        right:0;
+        background:none;
+        position:static;
+        width:auto;
+        height:auto;
+        
+      }
+    }
+    &-item {
+      margin:0 0 20px 0;
+      text-align: center;
+      &:last-of-type {
+        margin:0;
+      }
+      @include mixin.media {
+      margin:0 25px 0 0;
+      }
+    }
+    &-items {
+      margin:300px 0;
+      @include mixin.media {
+        margin:0;
+        display:flex;
+      }
+      a {
+        display:block;
+        color:vars.$HEADER_TEXT_COLOR;
+        font-family: var(--main-font-family);
+        font-size:1.5rem;
+        font-weight:bold;
+        letter-spacing:0.05em;
+      }
+    }
   }
 }
 .pg {
@@ -100,11 +159,13 @@ img {
         width:100%;
         height:55px;
         border-radius:50px;
+        letter-spacing:0.08em;
       }
     }
   }
   &-wrapper {
     font-family: var(--main-font-family);
+    color:var(--main-font-color);
   }
   &-news {
     margin:40px 0 80px;
@@ -113,7 +174,6 @@ img {
     }
     &__posts {
       font-size:1.5rem;
-      color:var(--main-font-color);
     }
     &__post {
       margin:40px 0 0 0;
@@ -153,7 +213,6 @@ img {
    }
    &__text {
     @include mixin.textstyle;
-    color:var(--main-font-color);
    }
    &__desc {
     margin:16px 0 0 0;
@@ -176,7 +235,7 @@ img {
   }
   &__text {
     @include mixin.textstyle;
-    color:var(--main-font-color);
+    text-align: center;
   }
  }
  &-company {
@@ -187,24 +246,104 @@ img {
     padding:0 20px;
   }
   &__concept {
+    text-align:center;
     &-text {
-      text-align: center;
       font-size:3.2rem;
       font-weight:600;
       font-family:var(--content-font-family);
-      line-height:1.3;
+      line-height:1.3;   
+      display:inline;
+      background:linear-gradient(transparent 78%, #F5F534 40%); 
+      letter-spacing:0.06em;
+      
     }
   }
   &__detail {
     margin:44px 0 32px;
+   
   }
   &__text {
-    text-align: center;
     @include mixin.textstyle;
-    color:var(--main-font-color);
+    text-align:center;
+  }
+ }
+ &-recruit {
+  &__content {
+    padding:60px 0 56px;
+  }
+  &__body {
+    padding: 0 20px;
+  }
+  &__detail {
+    @include mixin.textstyle;
+    text-align:center;
+  }
+ }
+ &-contact {
+  margin:40px 0 0 0;
+  &__inner {
+    padding:60px 0;
+  }
+  &__content {
+    padding:0 20px;
+  }
+  &__text {
+    @include mixin.textstyle;
+    text-align: center;
+   
+  }
+ }
+ &-footer {
+  background:vars.$FOOTER_BASE_COLOR;
+  color:vars.$FOOTER_COPYRIGHT_COLOR;
+  font-family:var(--main-font-family);
+  a {
+    color:vars.$HEADER_TEXT_COLOR;
+    font-size:1.2rem;
+    font-weight:bold;
+    display:block;
+    padding:0 10px;
+  }
+  &__content {
+    padding:60px 0;
+  }
+  &__inner {
+    padding:0 20px;
+  }
+  &__nav {
+    display:flex;
+    flex-wrap:wrap;
+  }
+  &__list {
+    margin:0 0 20px 0;
+  }
+  &__copyright {
+    margin:10px 0 0 0;
+    &-text {
+      text-align: center;
+    }
+  }
+ }
+ &-top-button {
+  position:fixed;
+  opacity:0;
+  cursor:pointer;
+  visibility: hidden;
+  right:20px;
+  bottom:20px;
+  transition:all 0.3s;
+
+  img {
+    width:50px;
+  }
+  a {
+    pointer-events:none;
   }
  }
 }
+// body {
+//   position:relative;
+// }
 .content {
   &-heading {
     text-align:center;
@@ -215,6 +354,7 @@ img {
         display:block;
         font-size:3rem;
         margin:0 0 4px 0;
+        letter-spacing:0.05em;
       }
       small {
         font-size:1.3rem;
@@ -228,4 +368,23 @@ img {
       margin:0 auto;
     }
   }
+}
+.show {
+  opacity:1;
+  visibility: visible;
+}
+.header__bar {
+    &.bar-top.active {
+      width:24px;
+      transform:rotate(45deg);
+      top:10px;
+    }
+    &.bar-mid.active {
+      opacity:0;
+    }
+    &.bar-bottom.active {
+      width:24px;
+      top:10px;
+      transform:rotate(135deg);
+    }
 }

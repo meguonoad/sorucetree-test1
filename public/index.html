@@ -14,7 +14,7 @@
         <div class="header__logo">
           <img src="img/design--header-logo.png" alt="ロゴ">
         </div>
-        <div class="header__nav">
+        <div class="header__nav" id="ham">
         <div class="header__hambarger">
           <div class="header__hambarger-bars">
             <span class="header__bar bar-top"></span>
@@ -22,7 +22,8 @@
             <span class="header__bar bar-bottom"></span>
           </div>
         </div>
-          <!-- <ul class="header__nav-items">
+        <div class="header__nav-body">
+          <ul class="header__nav-items">
             <li class="header__nav-item">
               <a href="">NEWS</a>
             </li>
@@ -41,7 +42,8 @@
             <li class="header__nav-item">
               <a href="">CONTACT</a>
             </li>
-          </ul> -->
+          </ul>
+        </div>
         </div>
       </div><!-- header__content -->
     </div>
@@ -233,27 +235,27 @@
     </section>
     <section class="pg-recruit pg-content--color">
       <div class="pg-recruit__inner">
-        <div class="pg-recruit__content">
-          <div class="pg-recruit__mv">
-            <div class="pg-recruit__img">
-              <img src="img/design--recruit--sp.jpg" alt="リクルート">
-            </div>
-          </div>
-          <div class="pg-recruit__heading content-heading">
-            <h2 class="pg-recruit__title content-heading__title">
-              <strong>RECRUIT</strong>
-              <small>採用情報</small>
-            </h2>
-          </div>
-          <div class="pg-recruit__body">
-            <div class="pg-recruit__detail">
-              <p class="pg-recruit__text">私たちと一緒に働きませんか？</p>
-            </div>
-            <div class="pg-recruit__button content-button">
-              <img src="img/btn.png" alt="もっとみる">
-            </div>
+        <div class="pg-recruit__mv">
+          <div class="pg-recruit__img">
+            <img src="img/design--recruit--sp.jpg" alt="リクルート">
           </div>
         </div>
+      <div class="pg-recruit__content">
+        <div class="pg-recruit__body">
+          <div class="pg-recruit__heading content-heading">
+           <h2 class="pg-recruit__title content-heading__title">
+             <strong>RECRUIT</strong>
+             <small>採用情報</small>
+             </h2>
+          </div>
+          <div class="pg-recruit__detail">
+            <p class="pg-recruit__text">私たちと一緒に働きませんか？</p>
+          </div>
+          <div class="pg-recruit__button content-button">
+             <img src="img/btn.png" alt="もっとみる">
+           </div>
+        </div>
+      </div>
       </div>
     </section>
     <section class="pg-contact pg-content--color">
@@ -306,10 +308,16 @@
           </ul>
         </div>
         <div class="pg-footer__copyright">
-          <p class="pg-footer_copyright-text">&copy;PONSDESIGN</p>
+          <p class="pg-footer__copyright-text">&copy;PONSDESIGN</p>
         </div>
       </div>
     </div>
   </footer>
+  <div class="pg-top-button" id="backtop">
+    <a href="">
+      <img src="img/design--backtop.png">
+    </a>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
