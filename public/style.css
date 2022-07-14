@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* 
 html5doctor.com Reset Stylesheet
 v1.6.1
@@ -127,9 +128,9 @@ img {
 }
 
 :root {
-  --main-font-color:#333333;
-  --main-font-family:"Montserrat";
-  --content-font-family:"Hiragino Kaku Gsich";
+  --main-font-color: #333333;
+  --main-font-family: "Montserrat";
+  --content-font-family: "ヒラギノ角ゴシック";
 }
 
 .header {
@@ -137,6 +138,7 @@ img {
   z-index: 1;
   height: 64px;
   width: 100vw;
+  background: #21054D;
 }
 @media screen and (min-width: 768px) {
   .header {
@@ -261,6 +263,16 @@ img {
   line-height: 1.2;
   letter-spacing: 0.05em;
 }
+@media screen and (min-width: 768px) {
+  .pg-mainvisual__heading {
+    font-size: 7.2rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .pg-mainvisual__text {
+    text-align: center;
+  }
+}
 .pg-mainvisual__sub-heading {
   font-size: 1.6rem;
   font-family: var(--content-font-family);
@@ -268,14 +280,32 @@ img {
   line-height: 1.5;
   letter-spacing: 0.08em;
 }
+@media screen and (min-width: 768px) {
+  .pg-mainvisual__sub-heading {
+    font-size: 2.4rem;
+  }
+}
 .pg-mainvisual__body {
   position: absolute;
   top: 284px;
   padding: 0 20px;
 }
+@media screen and (min-width: 768px) {
+  .pg-mainvisual__body {
+    top: 265px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+  }
+}
 .pg-mainvisual__button {
   margin: 30px 0 0 0;
   width: 220px;
+}
+@media screen and (min-width: 768px) {
+  .pg-mainvisual__button {
+    margin: 50px auto 0;
+  }
 }
 .pg-mainvisual__button a {
   display: flex;
@@ -298,28 +328,91 @@ img {
 .pg-news {
   margin: 40px 0 80px;
 }
+@media screen and (min-width: 768px) {
+  .pg-news__content {
+    display: flex;
+    justify-content: space-between;
+  }
+}
 .pg-news__inner {
   padding: 0 20px;
+}
+@media screen and (min-width: 768px) {
+  .pg-news__inner {
+    max-width: 917px;
+    margin: 0 auto;
+  }
 }
 .pg-news__posts {
   font-size: 1.5rem;
 }
+@media screen and (min-width: 768px) {
+  .pg-news__body {
+    width: calc(100% - 120px - 52px);
+  }
+}
 .pg-news__post {
   margin: 40px 0 0 0;
 }
+@media screen and (min-width: 768px) {
+  .pg-news__post {
+    margin: 16px 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .pg-news__post:first-of-type {
+    margin: 0;
+  }
+}
+.pg-news__date {
+  display: flex;
+  align-items: center;
+}
+.pg-news__date span {
+  display: flex;
+  background: #E8E8E8;
+  width: 82px;
+  height: 22px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
 .pg-news__date-text {
   letter-spacing: 0.08em;
+  margin: 0 20px 0 0;
+}
+.pg-news__lead {
+  font-family: var(--content-font-family);
+}
+@media screen and (min-width: 768px) {
+  .pg-news__lead {
+    width: calc(100% - 190px - 20px);
+  }
 }
 .pg-news__lead-text {
   font-size: 1.4rem;
   line-height: 2;
   letter-spacing: 0.03em;
 }
+@media screen and (min-width: 768px) {
+  .pg-news__heading {
+    margin: 0 50px 0 0 0;
+  }
+}
 .pg-service {
   margin: 80px 0 40px;
 }
 .pg-service__inner {
   padding: 0 20px;
+}
+@media screen and (min-width: 768px) {
+  .pg-service__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
 }
 .pg-service__img {
   max-width: 500px;
@@ -328,8 +421,19 @@ img {
 .pg-service__img img {
   width: 100%;
 }
+@media screen and (min-width: 768px) {
+  .pg-service__lists {
+    display: flex;
+    justify-content: space-between;
+  }
+}
 .pg-service__list {
   margin: 40px 0 0 0;
+}
+@media screen and (min-width: 768px) {
+  .pg-service__list {
+    width: calc((100% - 50px) / 3);
+  }
 }
 .pg-service__list-title {
   font-size: 1.8rem;
@@ -477,8 +581,13 @@ img {
 .content-heading__title strong {
   display: block;
   font-size: 3rem;
-  margin: 0 0 4px 0;
   letter-spacing: 0.05em;
+  line-height: 1.5;
+}
+@media screen and (min-width: 768px) {
+  .content-heading__title strong {
+    font-size: 3.6rem;
+  }
 }
 .content-heading__title small {
   font-size: 1.3rem;
@@ -508,5 +617,11 @@ img {
   width: 24px;
   top: 10px;
   transform: rotate(135deg);
+}
+
+@media screen and (min-width: 768px) {
+  .n-b-none {
+    display: none;
+  }
 }
 /*# sourceMappingURL=style.css.map */
