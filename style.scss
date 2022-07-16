@@ -369,17 +369,42 @@ img {
   }
 
   &-works {
+    $this:&;
+    height: 650px;
+    &__content {
+      @include mixin.media {
+        display:flex;
+        align-items:center;
+        justify-content: space-between;
+        height: 100%;
+      }
+    }
     &__inner {
       padding: 0 20px;
+      @include mixin.media {
+        height: 100%;
+        max-width:1300px;
+        margin:0 auto;
+
+      }
     }
 
     &__body {
       padding: 44px 0;
+      @include mixin.media {
+        width:calc(100% - 57% - 75px);
+      }
     }
 
     &__text {
       @include mixin.textstyle;
       text-align: center;
+    }
+    &__img {
+      width:floor(percentage(750px / 1300px));
+      img {
+        width:100%;
+      }
     }
   }
 
@@ -387,11 +412,23 @@ img {
     background: url(img/design--company-sp.png);
     background-size: contain;
     padding: 88px 0 116px;
+    @include mixin.media {
+      background-image: url(img/company-bg@pc.png);
+      background-repeat: no-repeat;
+      background-position: center;
+    }
 
     &__inner {
       padding: 0 20px;
     }
-
+    &__content {
+      @include mixin.media {
+        background:url(img/company-face@pc.png);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+  }
     &__concept {
       text-align: center;
 
@@ -422,6 +459,21 @@ img {
     &__content {
       padding: 60px 0 56px;
     }
+    &__inner {
+      @include mixin.media {
+        display:flex;
+        justify-content: space-between;
+
+      }
+    }
+    &__img {
+      @include mixin.media {
+        width:floor(percentage(665px / 1110px));
+        img {
+          object-fit: cover;
+        }
+      }
+    }
 
     &__body {
       padding: 0 20px;
@@ -438,6 +490,7 @@ img {
 
     &__inner {
       padding: 60px 0;
+     
     }
 
     &__content {
