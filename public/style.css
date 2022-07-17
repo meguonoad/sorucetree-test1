@@ -491,11 +491,13 @@ img {
   letter-spacing: 0.03em;
   text-align: center;
 }
-.pg-works__img {
-  width: 57%;
-}
-.pg-works__img img {
-  width: 100%;
+@media screen and (min-width: 768px) {
+  .pg-works__img {
+    width: 57%;
+  }
+  .pg-works__img img {
+    width: 100%;
+  }
 }
 .pg-company {
   background: url(img/design--company-sp.png);
@@ -511,6 +513,11 @@ img {
 }
 .pg-company__inner {
   padding: 0 20px;
+}
+@media screen and (min-width: 768px) {
+  .pg-company__inner {
+    padding: 0 70px;
+  }
 }
 @media screen and (min-width: 768px) {
   .pg-company__content {
@@ -541,13 +548,25 @@ img {
   letter-spacing: 0.03em;
   text-align: center;
 }
+@media screen and (min-width: 768px) {
+  .pg-recruit {
+    max-width: 1110px;
+    margin: 0 auto;
+  }
+}
 .pg-recruit__content {
   padding: 60px 0 56px;
 }
 @media screen and (min-width: 768px) {
+  .pg-recruit__content {
+    flex: 1;
+  }
+}
+@media screen and (min-width: 768px) {
   .pg-recruit__inner {
     display: flex;
-    justify-content: spa;
+    justify-content: space-between;
+    flex-direction: row-reverse;
   }
 }
 @media screen and (min-width: 768px) {
@@ -557,6 +576,7 @@ img {
   .pg-recruit__img img {
     -o-object-fit: cover;
        object-fit: cover;
+    height: 100%;
   }
 }
 .pg-recruit__body {
@@ -570,6 +590,11 @@ img {
 }
 .pg-contact {
   margin: 40px 0 0 0;
+}
+@media screen and (min-width: 768px) {
+  .pg-contact {
+    margin: 110px 0 0 0;
+  }
 }
 .pg-contact__inner {
   padding: 60px 0;
@@ -605,6 +630,11 @@ img {
   display: flex;
   flex-wrap: wrap;
 }
+@media screen and (min-width: 768px) {
+  .pg-footer__nav {
+    justify-content: center;
+  }
+}
 .pg-footer__list {
   margin: 0 0 20px 0;
 }
@@ -622,6 +652,12 @@ img {
   right: 20px;
   bottom: 20px;
   transition: all 0.3s;
+}
+@media screen and (min-width: 768px) {
+  .pg-top-button {
+    right: 45px;
+    bottom: 45px;
+  }
 }
 .pg-top-button img {
   width: 50px;
@@ -682,5 +718,14 @@ img {
   .n-b-none {
     display: none;
   }
+}
+
+.animation {
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.scroll-in {
+  opacity: 1;
 }
 /*# sourceMappingURL=style.css.map */

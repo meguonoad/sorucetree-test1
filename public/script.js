@@ -4,7 +4,6 @@
   const element = document.getElementById('backtop');
   window.addEventListener('scroll',function() {
     let scroll = window.scrollY;
-    // console.log(scroll);
     if (scroll > 350) {
       element.classList.add('show');
     } else {
@@ -32,4 +31,19 @@
       }
     });
   });
- }
+
+  const animationElements = document.querySelectorAll('.animation');
+
+  function fadeIn() {
+    animationElements.forEach(element => {
+      const targetShow = window.innerHeight / 2;
+     const elementTop =  element.getBoundingClientRect().top;
+      if (targetShow > elementTop) {
+        element.classList.add('scroll-in');
+      }
+    });
+  }
+  
+  window.addEventListener('scroll',fadeIn);
+    
+}
